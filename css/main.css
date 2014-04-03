@@ -1,0 +1,186 @@
+@import url('keyframes.css');
+
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.pop {
+  -moz-animation: pop 0.5s;
+}
+
+.shrink {
+  -moz-animation: shrink 0.2s forwards;
+}
+
+#bg {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+#bg_color,
+#bg_gradientOverlay {
+  display: none;
+}
+
+#page {
+  margin: auto;
+  position: relative;
+  transition: all 1s;
+  width: 640px;
+}
+
+#page.opened {
+  animation: pageOpen 1s forwards;
+  background-color: #002;
+  border: 5px solid #DDD;
+  border-radius: 5px;
+}
+
+#post {
+  background-color: gray;
+  background-image: -moz-linear-gradient(bottom, #444, #999);
+  background-size: 100% 600%;
+  border: 5px solid gray;
+  /*font-size: 62.5%;*/
+  padding: 4px;
+  position: absolute;
+  text-align: center;
+  top: 50px;
+  transition: all 1s;
+  width: 350px;
+  z-index: 2;
+}
+#post.borders {
+  border-radius: 10px;
+}
+#post.gradient {
+  background-size: 100% 100%;
+}
+#post.depost {
+  animation: depost 1s forwards;
+}
+#post .title {
+  color: #666;
+  transition: color 1s, text-shadow 1s;
+}
+#post .title.inset {
+  color: #999;
+  text-shadow: 0px -2px 0px #333, 0px 2px 3px #666;
+}
+#post .content {
+  position: relative;
+}
+#post .list {
+  background-color: #DDD;
+  font-family: "Lucida Console", Monaco, monospace;
+  left: 0px;
+  padding: 5px;
+  position: relative;
+  text-align: left;
+  top: 0px;
+  transition: border-radius 1s;
+}
+#post .list.borders {
+  border-radius: 5px;
+}
+#post .list.done {
+  animation: close 0.5s forwards;
+}
+#post .list p {
+  margin: 5px 0px;
+}
+#post .list .item {
+  display: none;
+}
+#post .list .success {
+  color: #3A3;
+}
+#post .list .error {
+  color: #F55;
+}
+
+#go {
+  background-image: -moz-linear-gradient(bottom, #500, #A00);
+  border: 5px solid #BBB;
+  border-radius: 10px;
+  color: #BBB;
+  display: block;
+  font-size: 200%;
+  padding: 15px 15px;
+  position: absolute;
+  transition: transform 0.2s;
+}
+#go.pop:hover {
+  border-color: #BB5;
+  color: #BB5;
+  transform: scale(1.2, 1.2);
+}
+
+#banner {
+  left: 0px;
+  position: relative;
+  top: 0px;
+}
+
+#navi {
+  height: 150px;
+  position: relative;
+  top: -20px;
+  z-index: 1;
+}
+.navi-item {
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: all 0.3s;
+}
+.navi-item.hovered {
+  transform: rotate(0deg) scale(1.2, 1.2);
+}
+.navi-item.chosen {
+  cursor: auto;
+}
+.navi-panel {
+  fill: #111;
+  opacity: 1;
+  transition: fill 0.3s, opacity 0.3s;
+}
+.navi-panel.hovered {
+  fill: #CC0;
+}
+.navi-panel.chosen {
+  opacity: 0;
+}
+.navi-text.hovered {
+  fill: #111;
+}
+
+#content {
+  color: #DDD;
+  display: none;
+  font-size: 80%;
+  height: 640px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  top: -40px;
+}
+
+.cube {
+  display: none;
+}
+
+#game {
+  background-color: #000;
+  border: 1px solid #DEDEDE;
+  margin: 50px;
+}
